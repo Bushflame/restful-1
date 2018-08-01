@@ -19,13 +19,13 @@ var server = http.createServer(function(req,res){
     var trimmedUrl = path.replace(/^\+|\/+$/g,'');
     
 // 4 get query string as an object result added to output below
-    var queryStringObject = parsedUrl.query
+    var queryStringObject = parsedUrl.query;
     
 // 3 get http method POST GET etc convert to upper case
     var method = req.method.toUpperCase();
     
 // 1 send response
-    res.end('Hello from server land\n')
+    res.end('Hello from server land\n');
     
 // 2 & 3 & 4 logout requested path
 // note ',' and not '+' at start of query string
