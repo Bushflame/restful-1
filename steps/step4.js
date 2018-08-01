@@ -21,8 +21,8 @@ var server = http.createServer(function(req,res){
 // 4 get query string as an object result added to output below
     var queryStringObject = parsedUrl.query
     
-// 3 get http method POST GET etc
-    var method = req.method.toUpperCase()
+// 3 get http method POST GET etc convert to upper case
+    var method = req.method.toUpperCase();
     
 // 1 send response
     res.end('Hello from server land\n')

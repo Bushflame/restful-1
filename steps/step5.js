@@ -5,41 +5,41 @@
 //dependencies
 var http = require('http');
 var url = require('url');
+
 //************************************ //
 //1 create server with 2 deps which get sent down after every req
-var server = http.createServer(function(req,res){
-    
+    var server = http.createServer(function(req, res){
+        
 // 2 create var to get  req url and parse it - inc querystring data 
-    var parsedUrl = url.parse(req.url, true);
-    
+    var parsedUrl = url.parse(req.url, true);  
 // 2 var get untrimmed url path
     var path = parsedUrl.pathname;
 
 // 2 var to trim path with a regex to give clean url with no slashes etc  
-    var trimmedUrl = path.replace(/^\+|\/+$/g,'');
+    var trimmedUrl = path.replace(/^\+|\/+$/g,''); 
     
 // 4 get query string as an object result added to output below
-    var queryStringObject = parsedUrl.query
+    var queryStringObject = parsedUrl.query;
     
-// 3 get http method POST GET etc
-    var method = req.method.toUpperCase()
+// 3 get http method POST GET etc convert to upper case
+    var method = req.method.toUpperCase();   
     
 // 1 send response
-    res.end('Hello from server land\n')
+    res.end('Hello from the server');
     
 // 2 & 3 & 4 logout requested path
 // note ',' and not '+' at start of query string
-    console.log('responding to request on path'+trimmedUrl+' with method '+method+' and with these query string perams ',queryStringObject)
+    console.log('The requested path was '+trimmedUrl+' using method '+method+' with a query string of ',queryStringObject); 
 
 });//end create server function
 //***************************************//
 // 1 start server - listen on port ????- give cb function to say listening
 // 1 create port var to save having to change in different places
     var port = 8000;
-    server.listen(port,function(){
-        console.log('server listening on port '+port)
-    })
- //end server listen function
+    server.listen(port, function(){
+        console.log('Server lidtening on port '+port);
+    });
+ // end server listen function
 
 
 //to see output run node index.js

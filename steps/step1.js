@@ -6,16 +6,19 @@
 var http = require('http')
 //************************************ //
 //create server with 2 deps which get sent down after every req
-var server = http.createServer(function(req,res){
+   var server = http.createServer(function(req,res){
+        
+    
     //send response
-    res.end('hello world\n')
+    res.end('Hello this is the server calling');
 });//end create server function
 //***************************************//
 //start server - listen on port 3000 - give cb function to say listening
- //end server listen function
-server.listen(3000,function(){
-    console.log('listening on port 3000')
-})
+ //server listen function
+    server.listen(3000,function(){
+        console.log('server listening on port 3000')
+    })
+
 
 //to see output run
 //node index.js

@@ -18,18 +18,14 @@ var server = http.createServer(function(req,res){
 // 2 var to trim path with a regex to give clean url with no slashes etc  
     var trimmedUrl = path.replace(/^\+|\/+$/g,'');
     
-// 4 get query string as an object result added to output below
-    var queryStringObject = parsedUrl.query
-    
-// 3 get http method POST GET etc
+// 3 get http method POST GET etc - change to upper case  result added to output below
     var method = req.method.toUpperCase()
     
 // 1 send response
     res.end('Hello from server land\n')
     
-// 2 & 3 & 4 logout requested path
-// note ',' and not '+' at start of query string
-    console.log('responding to request on path'+trimmedUrl+' with method '+method+' and with these query string perams ',queryStringObject)
+// 2 & 3 logout requested path and method
+    console.log('responding to request on path'+trimmedUrl+' with method '+method)
 
 });//end create server function
 //***************************************//
